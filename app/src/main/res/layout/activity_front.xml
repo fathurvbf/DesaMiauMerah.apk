@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".FrontActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@android:style/Widget.Holo.TextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="sistem Infomasi Desa Miau Merah"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/carouselView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:fillColor="#FFFFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:pageColor="#00000000"
+        app:radius="6dp"
+        app:slideInterval="3000"
+        app:strokeColor="#FF777777"
+        app:strokeWidth="1dp" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="3"
+        android:id="@+id/gridMenu"
+        android:columnCount="3"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintTop_toBottomOf="@id/carouselView">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvPortalDesa"
+            style="@style/cardViewMenu"
+            android:background="@android:color/holo_green_dark"
+            app:cardBackgroundColor="#0C3191"
+            android:clickable="true"
+            android:clipToPadding="false"
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <ImageView
+                android:id="@+id/imagePortalDesa"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/portal_desa" />
+
+            <TextView
+                android:id="@+id/portalDesa"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:text="@string/portal_desa" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvPengumuman"
+            style="@style/cardViewMenu"
+            android:background="@android:color/holo_orange_dark"
+            app:cardBackgroundColor="@android:color/holo_orange_dark"
+            android:clickable="true"
+            android:clipToPadding="false"
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <ImageView
+                android:id="@+id/imagePengumuman"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/pengumuman" />
+
+            <TextView
+                android:id="@+id/pengumuman"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:text="@string/pengumuman" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvCovid"
+            style="@style/cardViewMenu"
+            android:background="@android:color/holo_purple"
+            app:cardBackgroundColor="@android:color/holo_red_dark"
+            android:clickable="true"
+            android:clipToPadding="false"
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <ImageView
+                android:id="@+id/imageCovid"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/covid" />
+
+            <TextView
+                android:id="@+id/covid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/covid"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvLayanan"
+            style="@style/cardViewMenu"
+            android:background="@android:color/holo_orange_dark"
+            android:clickable="true"
+            android:clipToPadding="false"
+            android:focusable="true"
+            app:cardBackgroundColor="#68095A"
+            app:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <ImageView
+                android:id="@+id/imageLayanan"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/layanan_mandiri" />
+
+            <TextView
+                android:id="@+id/layanan"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:text="@string/layanan_mandiri" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvAdminDesa"
+            style="@style/cardViewMenu"
+            android:background="@android:color/holo_blue_dark"
+            app:cardBackgroundColor="@android:color/holo_blue_dark"
+            android:clickable="true"
+            android:clipToPadding="false"
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <ImageView
+                android:id="@+id/imageAdminDesa"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/admin_desa" />
+
+            <TextView
+                android:id="@+id/adminDesa"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:text="@string/adminDesa" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvPin"
+            style="@style/cardViewMenu"
+            android:background="@android:color/holo_green_dark"
+            android:clickable="true"
+            android:clipToPadding="false"
+            android:focusable="true"
+
+            app:cardBackgroundColor="@android:color/holo_green_dark"
+            app:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <ImageView
+                android:id="@+id/imagePin"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/pin" />
+
+            <TextView
+                android:id="@+id/pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="Daftar Pin"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvPanduan"
+            style="@style/cardViewMenu"
+            android:background="@android:color/holo_green_dark"
+            app:cardBackgroundColor="#6E2A1B"
+            android:clickable="true"
+            android:clipToPadding="false"
+
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <ImageView
+                android:id="@+id/imagePanduan"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/panduan" />
+
+            <TextView
+                android:id="@+id/panduan"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_height="wrap_content"
+                android:text="@string/panduan"
+                android:textColor="@android:color/white"
+                android:textAllCaps="true"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvSop"
+            style="@style/cardViewMenu"
+            android:background="@android:color/holo_green_dark"
+            app:cardBackgroundColor="@android:color/holo_red_light"
+            android:clickable="true"
+            android:clipToPadding="false"
+
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/cardview_default_radius">
+            <ImageView
+                android:id="@+id/imageSop"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/sop" />
+
+            <TextView
+                android:id="@+id/sop"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:text="@string/sop" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvJadwal"
+            style="@style/cardViewMenu"
+            android:background="@android:color/holo_green_dark"
+            android:clickable="true"
+            android:clipToPadding="false"
+            android:focusable="true"
+
+            app:cardBackgroundColor="#067177"
+            app:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <ImageView
+                android:id="@+id/imageJadwal"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/jadwal" />
+
+            <TextView
+                android:id="@+id/jadwal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/jadwal"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+        android:padding="5dp"
+        android:text="@string/info_footer"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
